@@ -1,7 +1,9 @@
-
+import uuid
+from pathlib import Path
+home = str(Path.home())
 
 def gerador_id():
-    IDS = "/home/mrminetoons/Documents/Api-Control/IdGenerator/ids.txt"
+    IDS = home + "/Documents/Api-Control/IdGenerator/ids.txt"
     arquivo = open(IDS, "rt") # Inicia o TXT para READ
     ###
     id_atual = arquivo.read() #Abre e adiciona o valor em id_atual
@@ -20,3 +22,6 @@ def gerador_id():
     clienteID = arquivo.read()
     arquivo.close()
     return clienteID
+
+def gerar_uuid():
+    return str(uuid.uuid4())
